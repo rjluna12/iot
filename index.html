@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+   <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBk00mV7xlKdxIeVBY4FSWUVXyJVlf2Iuw",
+    authDomain: "guldelunarasonabe.firebaseapp.com",
+    databaseURL: "https://guldelunarasonabe.firebaseio.com",
+    projectId: "guldelunarasonabe",
+    storageBucket: "guldelunarasonabe.appspot.com",
+    messagingSenderId: "203772485145"
+  };
+  firebase.initializeApp(config);
+      var controlRef = firebase.database().ref('control');
+      $('#app').html(`
+            <button onclick="firebaseSwitch(1)">LED ON</button>
+            <button onclick="firebaseSwitch(2)">LED OFF</button>
+        `);
+        function firebaseSwitch(state){
+            switch(state){
+                case 1: 
+                    controlRef.set({
+                        state: state,
+                        light1: 1
+                    });                     
+                    break;
+                case 2:
+                    controlRef.set({
+                        state: state,
+                        light1: 0
+                    });                     
+                    break;            
+            }
+        }
+    </script>
+</body>
+</html>
