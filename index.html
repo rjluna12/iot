@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Final Exam</title>
 </head>
-
+<body bgcolor="#00BFFF">
     <div id="app"></div>
 
     <script
@@ -25,10 +25,11 @@
       firebase.initializeApp(config);
       var controlRef = firebase.database().ref('control');
       $('#app').html(`
-
+            
+            <center>
             <button onclick="firebaseSwitch(1)">LED ON</button>
             <button onclick="firebaseSwitch(2)">LED OFF</button>
-     
+            </center>
 
         `);
         function firebaseSwitch(state){
