@@ -2,31 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Final Exam</title>
 </head>
-<body>
+<body bgcolor="#00BFFF">
     <div id="app"></div>
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
-   <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBk00mV7xlKdxIeVBY4FSWUVXyJVlf2Iuw",
-    authDomain: "guldelunarasonabe.firebaseapp.com",
-    databaseURL: "https://guldelunarasonabe.firebaseio.com",
-    projectId: "guldelunarasonabe",
-    storageBucket: "guldelunarasonabe.appspot.com",
-    messagingSenderId: "203772485145"
-  };
-  firebase.initializeApp(config);
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAoizYdZkZaVwAJRYAI3emxv6OHrol8qy0",
+        authDomain: "iotdemo-f09e4.firebaseapp.com",
+        databaseURL: "https://iotdemo-f09e4.firebaseio.com",
+        projectId: "iotdemo-f09e4",
+        storageBucket: "iotdemo-f09e4.appspot.com",
+        messagingSenderId: "731690374451"
+      };
+      firebase.initializeApp(config);
       var controlRef = firebase.database().ref('control');
       $('#app').html(`
+            
+            <center>
             <button onclick="firebaseSwitch(1)">LED ON</button>
             <button onclick="firebaseSwitch(2)">LED OFF</button>
+            </center>
+
         `);
         function firebaseSwitch(state){
             switch(state){
